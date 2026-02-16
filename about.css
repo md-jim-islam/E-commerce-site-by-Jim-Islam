@@ -1,0 +1,157 @@
+
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    ::selection {
+      color: #ffd;
+      background: gold;
+    }
+
+    :root {
+      --bg--dark: white;
+      --color--white: black;
+      --color--deepskyblue: #000;
+    }
+  html {
+    scroll-behavior: smooth;
+  }
+  @font-face {
+  font-family: 'Poppins';
+  src: url('Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('Poppins-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+    body {
+      background: var(--bg--dark);
+      color: var(--color--white);
+      font-family: Poppins;
+      background-attachment: fixed;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .nav-section {
+      margin-bottom: 6rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 14px;
+      background: #fff;
+      overflow: hidden;
+      border-bottom: 1px solid #E1E1E1;
+    }
+
+    .nav-Bar-Svg {
+      width: 20px;
+      height: 20px;
+      display: none;
+      cursor: pointer;
+    }
+
+    .nav-Links a {
+      display: inline-block;
+      max-width: max-content;
+      text-decoration: none;
+      color: #000;
+      font-size: 18px;
+      margin: 10px;
+      border-radius: 50%;
+      -webkit-tap-highlight-color: #8D8D9C45;
+      transition: all 0.7s;
+    }
+    .brand-Name h2 {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+ @media (max-width: 768px) {
+         nav {
+        padding: 14px 2px;
+        flex-direction: row;
+        align-items: center;
+      }
+      
+
+      .nav-Bar-Svg {
+        display: flex;
+        fill: var(--color--deepskyblue);
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
+      }
+
+      .nav-Links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #f9f9f9;
+        z-index: 999;
+      }
+
+      .nav-Links.active {
+        display: flex;
+        gap: 7px;
+        padding: 10px 0;
+      }
+
+      .nav-Links a {
+        font-size: 13px;
+        display: block;
+        margin: 0px 20px;
+      }
+
+      .brand-Name h2 {
+        font-size: 1rem;
+        color: var(--color--deepskyblue);
+        padding-left: 10px;
+      }
+.nav-section{
+  margin-bottom: 70px;
+}
+ }
+.info{
+  width: 97%;
+  margin: auto;
+}
+.info p{
+  line-height: 1.6;
+  word-spacing: 0.9;
+}

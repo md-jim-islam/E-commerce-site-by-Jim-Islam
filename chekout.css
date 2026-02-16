@@ -1,0 +1,349 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  user-select: none;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Poppins;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  padding: 24px;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+}
+
+::selection {
+  color: #ffd;
+  background: gold;
+}
+
+
+/* ===================================
+   FONT FACES
+   =================================== */
+@font-face {
+  font-family: 'Poppins';
+  src: url('Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('Poppins-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+svg {
+  width: 24px;
+  height: 24px;
+  stroke: #888;
+}
+
+.payment-container {
+  backdrop-filter: blur(100px);
+  background: linear-gradient(35deg, #FFFFFF, #E8E8E8, #F1F2FF);
+  padding: 30px 40px;
+  width: min(700px, 100%);
+  margin: auto;
+  border-radius: 20px;
+  border: 1px solid #E8E8E8;
+}
+
+.payment-header {
+  margin-bottom: 30px;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #555;
+  border-radius: 6px;
+  padding: 6px;
+}
+
+.has-icon {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  margin-left: 6px;
+  font-weight: 600;
+  flex: 1;
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    gap: 4px;
+    opacity: 0;
+    visibility: hidden;
+
+}
+.error-message.active{
+  opacity: 1;
+  visibility: visible;
+}
+.error-message svg{
+  width: 14px;
+  height: 14px;
+  stroke: transparent;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.success-icon {
+  stroke: #fff;
+  background: #12C400;
+  padding: 1px;
+  border-radius: 50%;
+}
+
+.error-icon {
+  padding: 2px;
+  border-radius: 50%;
+  stroke: white;
+  background: red;
+  display: none;
+}
+
+.btn-pay {
+  padding: 10px 60px;
+  background: #3b82f6;
+  border: none;
+  border-radius: 7px;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.place_order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.security-badge {
+  font-weight: 700;
+}
+
+.pymant_method {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pymant_top, .pymant_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pymant_top {
+  color: #000;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.pymant_bottom p {
+  padding: 10px 30px;
+  color: #000;
+  font-size: 17px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 0, 0, 1);
+  background: rgba(255, 0, 0, 0.08);
+}
+
+.pymant_bottom p.active {
+  border: 1px solid #3b82f6;
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.pymant_bottom {
+  justify-content: flex-start;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.pymant_top .method {
+  background: rgba(255, 0, 0, 0.08);
+  color: #000;
+  border: 1px solid rgba(255, 0, 0, 1);
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.pymant_top .method.active {
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 1);
+}
+
+.total {
+  text-align: center;
+  margin-top: 40px;
+  display: flex;
+  font-weight: 500;
+  justify-content: center;
+  font-size: 20px;
+  gap: 7px;
+}
+.priceTotal{
+  font-weight: 1000;
+}
+.success_modal{
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   visibility: hidden;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: rgba(0, 0, 0, 0.1);
+   background: #ECECEC;
+}
+#successMessage{
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 70px;
+  border-radius: 6px;
+  line-height: 1.6;
+}
+#successMessage svg{
+  width: 80px;
+  margin-bottom: 25px;
+  height: 80px;
+}
+#successMessage h3{
+  font-size: 30px;
+  font-weight: 1000;
+  line-height: 1.3;
+}
+#successMessage p{
+  color: #777;
+}
+.gotit{
+  padding: 14px 32px;
+  background: #4f46e5;
+  border-radius: 13px;
+  color: #fff;
+  border: none;
+  margin: 0px auto;
+  font-weight: 1000;
+  margin-top: 20px;
+  margin-top: 24px;
+  cursor: pointer;
+}
+.back{
+  top: 15px;
+  right: 15px;
+  background: deeppink;
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+  z-index: 94994;
+}
+
+.back_con{
+  background: transparent;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  body{
+    height: initial;
+    padding: 6px;
+  }
+ .form-row{
+   grid-template-columns: 1fr;
+   gap: 7px;
+ }
+ .back_con{
+   margin-bottom: 30px;
+ }
+.pymant_top p,.pymant_bottom p{
+  font-size: 14px  !important;
+}
+.btn-pay {
+  padding: 10px 30px;
+  font-size: 13px;
+  display: block;
+  font-weight: 500;
+  width: max-content;
+}
+
+.place_order {
+  display: block;
+}
+
+.security-badge {
+  font-weight: 700;
+  font-size: 13px;
+  margin-top: 22px;
+}
+#successMessage{
+  width: 90%;
+  padding: 60px 0;
+}
+#successMessage h3{
+  font-size: 20px;
+}
+#successMessage p{
+  font-size: 12px;
+  line-height: 1.6;
+}
+.gotit{
+  padding: 10px 20px;
+}
+}

@@ -1,0 +1,144 @@
+
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    ::selection {
+      color: #ffd;
+      background: gold;
+    }
+
+:root {
+  --neutral-100: #f9f9f9;
+  --amber-400: #f59e0b;
+  --fuchsia-400: #d946ef;
+  --gray-500: #6b7280;
+  --error-color: #ef4444;
+  --success-color: #22c55e;
+}
+  html {
+    scroll-behavior: smooth;
+  }
+  @font-face {
+  font-family: 'Poppins';
+  src: url('Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('Poppins-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+    body {
+      background: var(--neutral-100);
+      color: var(--color--white);
+      font-family: Poppins;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      height: 100vh;
+      
+    }
+.back {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: deeppink;
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+}
+.contact-section{
+  width: 100%;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  gap: 10px;
+}
+.contact-title{
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+.contact-title h1{
+  position: relative;
+  max-width: max-content;
+  margin: auto;
+}
+form input,form textarea{
+  background: #fff;
+  border: none;
+  outline: none;
+  padding: 7px;
+  padding-left: 20px;
+  border-radius: 5px;
+}
+form input{
+  height: 50px;
+}
+form textarea{
+  height: 111px;
+}
+form input::placeholder,form textarea::placeholder{
+  font-size: 15px;
+}
+.form-btn button{
+  padding: 10px 30px;
+  border-radius: 12px;
+  border: none;
+  background: #fff;
+  color: #111;
+  font-weight: 600;
+  font-size: 22px;
+}
+.contact-title h1::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 4px;
+  background: #333;
+  left: 0;
+  bottom: -1px;
+  border-radius: 567rem;
+}
+@media (max-width: 768px) {
+  .form-btn button{
+    font-size: 17px;
+  }
+  form input::placeholder,form textarea::placeholder{
+    font-size: 13px;
+  }
+  .contact-title h1{
+    font-size: 24px;
+  }
+ .back{
+   font-size: 12px;
+ }
+ 
+}
